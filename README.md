@@ -4,9 +4,10 @@
 
 ## Team: DOBEETEAM
 
-Member: - AndyNgoJs (http://fb.com/dn279)
+Member:
+  - AndyNgoJs (http://fb.com/dn279)
 
-        - ThanhJang (http://fb.com/100007155970382)
-        
-        - Biền (http://fb.com/100016539158886)
+  - ThanhJang (http://fb.com/100007155970382)
+         
+  - Biền (http://fb.com/100016539158886)
 
