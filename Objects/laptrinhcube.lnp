@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\script.obj" 
+TO ".\Objects\laptrinhcube" 
+PRINT(".\Listings\laptrinhcube.m51")

@@ -1,0 +1,339 @@
+C51 COMPILER V9.60.0.0   MAIN                                                              04/24/2021 15:29:22 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\Main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\Main
+                    -.lst) TABS(2) OBJECT(.\Objects\Main.obj)
+
+line level    source
+
+   1          #include <reg2051.h>
+*** WARNING C318 IN LINE 1 OF Main.c: can't open file 'reg2051.h'
+   2          #include <delay.h>
+*** WARNING C318 IN LINE 2 OF Main.c: can't open file 'delay.h'
+   3          
+   4          //to transistors for switching on off layers
+   5          sbit px0 = P1^0;
+*** ERROR C202 IN LINE 5 OF Main.c: 'P1': undefined identifier
+   6          sbit px1 = P1^1;
+*** ERROR C202 IN LINE 6 OF Main.c: 'P1': undefined identifier
+   7          sbit px2 = P1^2;
+*** ERROR C202 IN LINE 7 OF Main.c: 'P1': undefined identifier
+   8          sbit px3 = P1^3;
+*** ERROR C202 IN LINE 8 OF Main.c: 'P1': undefined identifier
+   9          
+  10          //to 74hc154n for turnning on led. low active, low output
+  11          sbit pd0 = P1^4; //decode pin 0
+*** ERROR C202 IN LINE 11 OF Main.c: 'P1': undefined identifier
+  12          sbit pd1 = P1^5; //decode pin 1
+*** ERROR C202 IN LINE 12 OF Main.c: 'P1': undefined identifier
+  13          sbit pd2 = P1^6; //decode pin 2
+*** ERROR C202 IN LINE 13 OF Main.c: 'P1': undefined identifier
+  14          sbit pd3 = P1^7; //decode pin 3
+*** ERROR C202 IN LINE 14 OF Main.c: 'P1': undefined identifier
+  15          
+  16          void STEP4() {
+  17   1        unsigned int i,j=0;
+  18   1        for(j=0;j<100;j++) {
+  19   2            for(i=0;i<16;i++) {
+  20   3                P1=(i<<4)|0x08; 
+*** ERROR C202 IN LINE 20 OF Main.c: 'P1': undefined identifier
+  21   3                delay_us(150);
+  22   3            }
+  23   2        }
+  24   1        for(j=0;j<100;j++) {
+  25   2            for(i=0;i<16;i++) {
+  26   3              P1=(i<<4)|0x04;
+  27   3              delay_us(150);
+  28   3            }
+  29   2        }
+  30   1      
+  31   1        for(j=0;j<100;j++)
+  32   1        {
+  33   2          for(i=0;i<16;i++)
+  34   2          {
+  35   3            P1=(i<<4)|0x02;
+  36   3            delay_us(150);
+  37   3          }
+  38   2        }
+  39   1        for(j=0;j<100;j++) {
+  40   2            for(i=0;i<16;i++)
+  41   2            {
+  42   3              P1=(i<<4)|0x01;
+  43   3              delay_us(150);
+C51 COMPILER V9.60.0.0   MAIN                                                              04/24/2021 15:29:22 PAGE 2   
+
+  44   3            }
+  45   2        }
+  46   1      }
+  47          
+  48          void STEP3() {
+  49   1        unsigned char i,j=0;
+  50   1        for(j=0;j<100;j++) {
+  51   2            for(i=0;i<16;i++) {
+  52   3                P1=(i<<4)|0x01;
+  53   3                delay_us(150);
+  54   3            }
+  55   2        }
+  56   1        for(j=0;j<100;j++) {
+  57   2            for(i=0;i<16;i++) {
+  58   3                P1=(i<<4)|0x02;
+  59   3                delay_us(150);
+  60   3            }
+  61   2        }
+  62   1        for(j=0;j<100;j++) {
+  63   2            for(i=0;i<16;i++)
+  64   2            {
+  65   3              P1=(i<<4)|0x04;
+  66   3              delay_us(150);
+  67   3            }
+  68   2        }
+  69   1         for(j=0;j<100;j++) {
+  70   2            for(i=0;i<16;i++) {
+  71   3                P1=(i<<4)|0x08;
+  72   3                delay_us(150);
+  73   3             }
+  74   2          }
+  75   1      }
+  76          
+  77          void STEP1()
+  78          {
+  79   1      unsigned char i=0;
+  80   1      
+  81   1      for(i=0;i<16;i++)
+  82   1      {
+  83   2      P1=(i<<4)|0x08;
+  84   2      delay_ms(400);
+  85   2      }
+  86   1      for(i=0;i<16;i++)
+  87   1      {
+  88   2      P1=(i<<4)|0x04;
+  89   2      delay_ms(400);
+  90   2      }
+  91   1      for(i=0;i<16;i++)
+  92   1      {
+  93   2      P1=(i<<4)|0x02;
+  94   2      delay_ms(400);
+  95   2      }
+  96   1      for(i=0;i<16;i++)
+  97   1      {
+  98   2      P1=(i<<4)|0x01;
+  99   2      delay_ms(400);
+ 100   2      }}
+ 101          
+ 102          void STEP2()
+ 103          {
+ 104   1      unsigned char i,j=0; 
+ 105   1      for(i=0;i<2;i++)
+C51 COMPILER V9.60.0.0   MAIN                                                              04/24/2021 15:29:22 PAGE 3   
+
+ 106   1      {
+ 107   2      P1=0x0F;
+ 108   2      delay_ms(300);
+ 109   2      P1=0x1F;
+ 110   2      delay_ms(300);
+ 111   2      P1=0x2F;
+ 112   2      delay_ms(300);
+ 113   2      P1=0x3F;
+ 114   2      delay_ms(300);
+ 115   2      P1=0x4F;
+ 116   2      delay_ms(300);
+ 117   2      P1=0x5F;
+ 118   2      delay_ms(300);
+ 119   2      P1=0x6F;
+ 120   2      delay_ms(300);
+ 121   2      P1=0x7F;
+ 122   2      delay_ms(300);
+ 123   2      P1=0x8F;
+ 124   2      delay_ms(300);
+ 125   2      P1=0x9F;
+ 126   2      delay_ms(300);
+ 127   2      P1=0xAF;
+ 128   2      delay_ms(300);
+ 129   2      P1=0xBF;
+ 130   2      delay_ms(300);
+ 131   2      P1=0xCF;
+ 132   2      delay_ms(300);
+ 133   2      P1=0xDF;
+ 134   2      delay_ms(300);
+ 135   2      P1=0xEF;
+ 136   2      delay_ms(300);
+ 137   2      P1=0xFF;
+ 138   2      delay_ms(300);
+ 139   2      }}
+ 140          
+ 141          void STEP5()
+ 142          {
+ 143   1      unsigned int j=0;
+ 144   1      for(j=0;j<5;j++)
+ 145   1      {
+ 146   2      P1=0x0F;
+ 147   2      delay_ms(200);
+ 148   2      P1=0x1F;
+ 149   2      delay_ms(200);
+ 150   2      P1=0x2F;
+ 151   2      delay_ms(200);
+ 152   2      P1=0x3F;    
+ 153   2      delay_ms(200);
+ 154   2      
+ 155   2      P1=0x7F;
+ 156   2      delay_ms(200);
+ 157   2      P1=0x6F;
+ 158   2      delay_ms(200);
+ 159   2      P1=0x5F;
+ 160   2      delay_ms(200);
+ 161   2      P1=0x4F;
+ 162   2      delay_ms(200);
+ 163   2      
+ 164   2      P1=0x8F;
+ 165   2      delay_ms(200);
+ 166   2      P1=0x9F;
+ 167   2      delay_ms(200);
+C51 COMPILER V9.60.0.0   MAIN                                                              04/24/2021 15:29:22 PAGE 4   
+
+ 168   2      P1=0xAF;
+ 169   2      delay_ms(200);;
+ 170   2      P1=0xBF;
+ 171   2      delay_ms(200);
+ 172   2      
+ 173   2      P1=0xFF;
+ 174   2      delay_ms(200);
+ 175   2      P1=0xEF;
+ 176   2      delay_ms(200);
+ 177   2      P1=0xDF;
+ 178   2      delay_ms(200);
+ 179   2      P1=0xCF;
+ 180   2      delay_ms(200);
+ 181   2      
+ 182   2      
+ 183   2      P1=0xFF;
+ 184   2      delay_ms(200);
+ 185   2      P1=0xEF;
+ 186   2      delay_ms(200);
+ 187   2      P1=0xDF;
+ 188   2      delay_ms(200);
+ 189   2      P1=0xCF;
+ 190   2      delay_ms(200);
+ 191   2      
+ 192   2      P1=0x8F;
+ 193   2      delay_ms(200);
+ 194   2      P1=0x9F;
+ 195   2      delay_ms(200);
+ 196   2      P1=0xAF;
+ 197   2      delay_ms(200);;
+ 198   2      P1=0xBF;
+ 199   2      delay_ms(200);
+ 200   2      
+ 201   2      
+ 202   2      P1=0x7F;
+ 203   2      delay_ms(200);
+ 204   2      P1=0x6F;
+ 205   2      delay_ms(200);
+ 206   2      P1=0x5F;
+ 207   2      delay_ms(200);
+ 208   2      P1=0x4F;
+ 209   2      delay_ms(200);
+ 210   2      
+ 211   2      
+ 212   2      
+ 213   2      P1=0x0F;
+ 214   2      delay_ms(200);
+ 215   2      P1=0x1F;
+ 216   2      delay_ms(200);
+ 217   2      P1=0x2F;
+ 218   2      delay_ms(200);
+ 219   2      P1=0x3F;    
+ 220   2      delay_ms(200);
+ 221   2      }}
+ 222          
+ 223          void STEP0() {
+ 224   1        unsigned char i,j,j1=0;
+ 225   1        for(j1=0;j1<5;j1++)
+ 226   1        {
+ 227   2        for(j=0;j<10;j++)
+ 228   2        {
+ 229   3        for(i=0;i<16;i++)
+C51 COMPILER V9.60.0.0   MAIN                                                              04/24/2021 15:29:22 PAGE 5   
+
+ 230   3        {
+ 231   4        P1=(i<<4)|0x01;
+ 232   4        delay_us(150);
+ 233   4        }}
+ 234   2        
+ 235   2        for(j=0;j<10;j++)
+ 236   2        {
+ 237   3        for(i=0;i<16;i++)
+ 238   3        {
+ 239   4        P1=(i<<4)|0x02;
+ 240   4        delay_us(150);
+ 241   4        }}
+ 242   2        
+ 243   2        
+ 244   2        for(j=0;j<10;j++)
+ 245   2        {
+ 246   3        for(i=0;i<16;i++)
+ 247   3        {
+ 248   4        P1=(i<<4)|0x04;
+ 249   4        delay_us(150);
+ 250   4        }}
+ 251   2        
+ 252   2        
+ 253   2        for(j=0;j<10;j++) {
+ 254   3            for(i=0;i<16;i++) {
+ 255   4                P1=(i<<4)|0x08;
+ 256   4                delay_us(150);
+ 257   4            }
+ 258   3        }
+ 259   2      
+ 260   2      
+ 261   2        for(j=0;j<10;j++) {
+ 262   3            for(i=0;i<16;i++) {
+ 263   4                P1=(i<<4)|0x08; 
+ 264   4                delay_us(150);
+ 265   4            }
+ 266   3        }
+ 267   2        
+ 268   2        
+ 269   2        for(j=0;j<10;j++)
+ 270   2        {
+ 271   3        for(i=0;i<16;i++)
+ 272   3        {
+ 273   4        P1=(i<<4)|0x04;
+ 274   4        delay_us(150);
+ 275   4        }}
+ 276   2        
+ 277   2        
+ 278   2        for(j=0;j<10;j++)
+ 279   2        {
+ 280   3        for(i=0;i<16;i++)
+ 281   3        {
+ 282   4        P1=(i<<4)|0x02;
+ 283   4        delay_us(150);
+ 284   4        }}
+ 285   2        
+ 286   2        for(j=0;j<10;j++)
+ 287   2        {
+ 288   3        for(i=0;i<16;i++)
+ 289   3        {
+ 290   4        P1=(i<<4)|0x01;
+ 291   4        delay_us(150);
+C51 COMPILER V9.60.0.0   MAIN                                                              04/24/2021 15:29:22 PAGE 6   
+
+ 292   4        }}}}       
+ 293           
+ 294          void main(void) { 
+ 295   1        delay_sec(1);
+ 296   1         while (1) {
+ 297   2            //#############self checking############
+ 298   2            STEP0();
+ 299   2            STEP1();
+ 300   2            STEP2();
+ 301   2            //rainfall ********************************
+ 302   2            STEP3();
+ 303   2            STEP4();
+ 304   2            STEP5();
+ 305   2         }
+ 306   1      }
+
+C51 COMPILATION COMPLETE.  2 WARNING(S),  9 ERROR(S)

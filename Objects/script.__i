@@ -1,0 +1,1 @@
+"script.c" OPTIMIZE (8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\script.lst) TABS (3) OBJECT(.\Objects\script.obj)
