@@ -304,8 +304,7 @@ void STEP5() {
 }
 
 void main(void) { 
-   
-   delay(20);
+   delay(10);
    
    while(1) 
    {
