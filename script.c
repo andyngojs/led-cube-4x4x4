@@ -14,26 +14,29 @@ sbit pd2 = P1^6; //decode pin 2
 sbit pd3 = P1^7; //decode pin 3
 
 void delay(unsigned int t) {
-   unsigned int i;
-   for (i = 0 ; i <= t ; i++);
+   unsigned int i,y;
+   for (i = 0 ; i < t ; i++);
 }
 
 void STEP0() {
    unsigned char i,j,j1=0;
    
    for(j1=0;j1<5;j1++) {
+      
       for(j=0;j<10;j++) {
          for(i=0;i<16;i++) {
             P1=(i<<4)|0x01;
             delay(250);
          }
       }
+      
       for(j=0;j<10;j++) {
          for(i=0;i<16;i++) {
             P1=(i<<4)|0x02;
             delay(250);
          }
       }
+      
       for(j=0;j<10;j++)
       {
          for(i=0;i<16;i++)
@@ -42,6 +45,7 @@ void STEP0() {
             delay(250);
          }
       }
+      
       for(j=0;j<10;j++)
       {
          for(i=0;i<16;i++)
@@ -50,6 +54,7 @@ void STEP0() {
             delay(250);
          }
       }
+      
       for(j=0;j<10;j++)
       {
          for(i=0;i<16;i++)
@@ -58,6 +63,7 @@ void STEP0() {
             delay(250);
          }
       }
+      
       for(j=0;j<10;j++)
       {
          for(i=0;i<16;i++)
@@ -66,6 +72,7 @@ void STEP0() {
             delay(250);
          }
       }
+      
       for(j=0;j<10;j++)
       {
          for(i=0;i<16;i++)
@@ -81,6 +88,7 @@ void STEP0() {
             delay(250);
          }
       }
+      
    }
 }	
 
@@ -90,9 +98,16 @@ void STEP1()
    
    for(i=0;i<16;i++)
    {
-      P1=(i<<4)|0x08;
+      P1=(i<<4)|0x01;
       delay(300);
    }
+   
+   for(i=0;i<16;i++)
+   {
+      P1=(i<<4)|0x02;
+      delay(300);
+   }
+   
    for(i=0;i<16;i++)
    {
       P1=(i<<4)|0x04;
@@ -100,12 +115,7 @@ void STEP1()
    }
    for(i=0;i<16;i++)
    {
-      P1=(i<<4)|0x02;
-      delay(300);
-   }
-   for(i=0;i<16;i++)
-   {
-      P1=(i<<4)|0x01;
+      P1=(i<<4)|0x08;
       delay(300);
    }
 }
@@ -113,7 +123,7 @@ void STEP1()
 void STEP2()
 {
    unsigned char i,j=0; 
-   for(i=0;i<2;i++)
+   for(i=0;i<3;i++)
    {
       P1=0x0F;
       delay(300);
@@ -297,8 +307,8 @@ void main(void) {
    
    delay(1000);
    
-   while (1) {
-      
+   while (1) 
+   {
       //############# self checking ############
       STEP0();
       STEP1();
