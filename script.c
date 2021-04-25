@@ -14,7 +14,7 @@ sbit pd2 = P1^6; //decode pin 2
 sbit pd3 = P1^7; //decode pin 3
 
 void delay(unsigned int t) {
-   unsigned int i,y;
+   unsigned int i;
    for (i = 0 ; i <= t ; i++);
 }
 
@@ -26,14 +26,14 @@ void STEP0() {
       for(j=0;j<10;j++) {
          for(i=0;i<16;i++) {
             P1=(i<<4)|0x01;
-            delay(250);
+            delay(50);
          }
       }
       
       for(j=0;j<10;j++) {
          for(i=0;i<16;i++) {
             P1=(i<<4)|0x02;
-            delay(250);
+            delay(50);
          }
       }
       
@@ -42,7 +42,7 @@ void STEP0() {
          for(i=0;i<16;i++)
          {
             P1=(i<<4)|0x04;
-            delay(250);
+            delay(50);
          }
       }
       
@@ -51,7 +51,7 @@ void STEP0() {
          for(i=0;i<16;i++)
          {
             P1=(i<<4)|0x08;
-            delay(250);
+            delay(50);
          }
       }
       
@@ -60,7 +60,7 @@ void STEP0() {
          for(i=0;i<16;i++)
          {
             P1=(i<<4)|0x08;	
-            delay(250);
+            delay(50);
          }
       }
       
@@ -69,7 +69,7 @@ void STEP0() {
          for(i=0;i<16;i++)
          {
             P1=(i<<4)|0x04;
-            delay(250);
+            delay(50);
          }
       }
       
@@ -78,14 +78,14 @@ void STEP0() {
          for(i=0;i<16;i++)
          {
             P1=(i<<4)|0x02;
-            delay(250);
+            delay(50);
          }
       }
       
       for(j=0;j<10;j++) {
          for(i=0;i<16;i++) {
             P1=(i<<4)|0x01;
-            delay(250);
+            delay(50);
          }
       }
       
@@ -99,24 +99,24 @@ void STEP1()
    for(i=0;i<16;i++)
    {
       P1=(i<<4)|0x08;
-      delay(300);
+      delay(50);
    }
    
    for(i=0;i<16;i++)
    {
       P1=(i<<4)|0x04;
-      delay(300);
+      delay(50);
    }
    
    for(i=0;i<16;i++)
    {
       P1=(i<<4)|0x02;
-      delay(300);
+      delay(50);
    }
    for(i=0;i<16;i++)
    {
       P1=(i<<4)|0x01;
-      delay(300);
+      delay(50);
    }
 }
 
@@ -126,37 +126,37 @@ void STEP2()
    for(i=0;i<3;i++)
    {
       P1=0x0F;
-      delay(300);
+      delay(50);
       P1=0x1F;
-      delay(300);
+      delay(50);
       P1=0x2F;
-      delay(300);
+      delay(50);
       P1=0x3F;
-      delay(300);
+      delay(50);
       P1=0x4F;
-      delay(300);
+      delay(50);
       P1=0x5F;
-      delay(300);
+      delay(50);
       P1=0x6F;
-      delay(300);
+      delay(50);
       P1=0x7F;
-      delay(300);
+      delay(50);
       P1=0x8F;
-      delay(300);
+      delay(50);
       P1=0x9F;
-      delay(300);
+      delay(50);
       P1=0xAF;
-      delay(300);
+      delay(50);
       P1=0xBF;
-      delay(300);
+      delay(50);
       P1=0xCF;
-      delay(300);
+      delay(50);
       P1=0xDF;
-      delay(300);
+      delay(50);
       P1=0xEF;
-      delay(300);
+      delay(50);
       P1=0xFF;
-      delay(300);
+      delay(50);
    }
 }
 
@@ -166,28 +166,28 @@ void STEP3()
    for(j=0;j<100;j++) {
       for(i=0;i<16;i++) {
          P1=(i<<4)|0x01;
-         delay(250);
+         delay(50);
       }
    }
    
    for(j=0;j<100;j++) {
       for(i=0;i<16;i++) {
          P1=(i<<4)|0x02;
-         delay(250);
+         delay(50);
       }
    }
    
    for(j=0;j<100;j++) {
       for(i=0;i<16;i++) {
          P1=(i<<4)|0x04;
-         delay(250);
+         delay(50);
       }
    }
    
    for(j=0;j<100;j++) {
       for(i=0;i<16;i++) {
          P1=(i<<4)|0x08;
-         delay(250);
+         delay(50);
       }
    }
 }
@@ -198,28 +198,28 @@ void STEP4() {
    for(j=0;j<100;j++) {
       for(i=0;i<16;i++) {
          P1=(i<<4)|0x08;	
-         delay(250);
+         delay(50);
       }
    }
    
    for(j=0;j<100;j++) {
       for(i=0;i<16;i++) {
          P1=(i<<4)|0x04;
-         delay(250);
+         delay(50);
       }
    }
    
    for(j=0;j<100;j++) {
       for(i=0;i<16;i++) {
          P1=(i<<4)|0x02;
-         delay(250);
+         delay(50);
       }
    }
    
    for(j=0;j<100;j++) {
       for(i=0;i<16;i++) {
          P1=(i<<4)|0x01;
-         delay(250);
+         delay(50);
       }
    }
 }
@@ -230,84 +230,84 @@ void STEP5() {
    
    for(j=0;j<5;j++) {
       P1=0x0F;
-      delay(500);
+      delay(50);
       P1=0x1F;
-      delay(500);
+      delay(50);
       P1=0x2F;
-      delay(500);
+      delay(50);
       P1=0x3F;	  
-      delay(500);
+      delay(50);
       
       P1=0x7F;
-      delay(500);
+      delay(50);
       P1=0x6F;
-      delay(500);
+      delay(50);
       P1=0x5F;
-      delay(500);
+      delay(50);
       P1=0x4F;
-      delay(500);
+      delay(50);
       
       P1=0x8F;
-      delay(500);
+      delay(50);
       P1=0x9F;
-      delay(500);
+      delay(50);
       P1=0xAF;
-      delay(500);
+      delay(50);
       P1=0xBF;
-      delay(500);
+      delay(50);
       
       P1=0xFF;
-      delay(500);
+      delay(50);
       P1=0xEF;
-      delay(500);
+      delay(50);
       P1=0xDF;
-      delay(500);
+      delay(50);
       P1=0xCF;
-      delay(500);
+      delay(50);
       
       P1=0xFF;
-      delay(500);
+      delay(50);
       P1=0xEF;
-      delay(500);
+      delay(50);
       P1=0xDF;
-      delay(500);
+      delay(50);
       P1=0xCF;
-      delay(500);
+      delay(50);
       
       P1=0x8F;
-      delay(500);
+      delay(50);
       P1=0x9F;
-      delay(500);
+      delay(50);
       P1=0xAF;
-      delay(500);
+      delay(50);
       P1=0xBF;
-      delay(500);
+      delay(50);
       
       P1=0x7F;
-      delay(500);
+      delay(50);
       P1=0x6F;
-      delay(500);
+      delay(50);
       P1=0x5F;
-      delay(500);
+      delay(50);
       P1=0x4F;
-      delay(500);
+      delay(50);
       
       P1=0x0F;
-      delay(500);
+      delay(50);
       P1=0x1F;
-      delay(500);
+      delay(50);
       P1=0x2F;
-      delay(500);
+      delay(50);
       P1=0x3F;	  
-      delay(500);
+      delay(50);
    }
 }
 
 void main(void) { 
    
-   delay(1000);
+   delay(20);
    
-   while (1) 
+   while(1) 
    {
       //############# self checking ############
       STEP0();
