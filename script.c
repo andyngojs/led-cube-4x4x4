@@ -15,7 +15,7 @@ sbit pd3 = P1^7; //decode pin 3
 
 void delay(unsigned int t) {
    unsigned int i,y;
-   for (i = 0 ; i < t ; i++);
+   for (i = 0 ; i <= t ; i++);
 }
 
 void STEP0() {
@@ -98,13 +98,7 @@ void STEP1()
    
    for(i=0;i<16;i++)
    {
-      P1=(i<<4)|0x01;
-      delay(300);
-   }
-   
-   for(i=0;i<16;i++)
-   {
-      P1=(i<<4)|0x02;
+      P1=(i<<4)|0x08;
       delay(300);
    }
    
@@ -113,9 +107,15 @@ void STEP1()
       P1=(i<<4)|0x04;
       delay(300);
    }
+   
    for(i=0;i<16;i++)
    {
-      P1=(i<<4)|0x08;
+      P1=(i<<4)|0x02;
+      delay(300);
+   }
+   for(i=0;i<16;i++)
+   {
+      P1=(i<<4)|0x01;
       delay(300);
    }
 }
