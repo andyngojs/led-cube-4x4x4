@@ -1,7 +1,5 @@
 # Make Led Cube 4x4x4 Use IC microcontrol AT89C2051 
 
-## Đồ án môn Thiết kế mạch số 
-
 ## FEIT - HOU
 
 ## Team: DOBEETEAM
