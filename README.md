@@ -1,17 +1,13 @@
 # Make Led Cube 4x4x4 Use IC microcontrol AT89C2051 
 
-### FEIT HOU
+This is a exercise Embedd Programming (Big Exercise 1)
 
-### Team: DOBEETEAM
+Make Led Cube 4x4x4 Use IC `AT89C2051`
+
 
 Member:
 
-- AndyNgoJs (http://fb.com/dn279)
+- Dong Ngo (http://fb.com/dn279)
 
-- Thanhjang (http://fb.com/100007155970382)
+- Thanh Nguyen (http://fb.com/100007155970382)
  
-# Join Us: 
-
-Fanpage FB: http://fb.com/dobeeteamm
-
-Group FB: http://fb.com/groups/dobeeteam.community
